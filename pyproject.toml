@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "tex2epub"
+version = "0.1.0"
+description = "Convert arXiv LaTeX papers to EPUB"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "ebooklib>=0.18",
+]
+
+[project.scripts]
+tex2epub = "tex2epub.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tex2epub*"]
+
+[tool.setuptools.package-data]
+"tex2epub" = ["styles/*.css"]
